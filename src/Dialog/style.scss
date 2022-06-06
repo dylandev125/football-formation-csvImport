@@ -1,0 +1,36 @@
+.browse-wrapper {
+    margin: 16px 0px;
+    border: 1px solid #494949;
+    height: 44px;
+    width: 300px;
+    display: flex;
+    border-radius: 8px;
+    justify-content: space-between;
+    .file-upload {
+        border: 1px solid #494949;
+        border-radius: 8px;
+        padding: 12px 20px;
+
+        color: #cbcbcb;
+        font-weight: 500;
+        font-size: 14px;
+    }
+
+    .file-upload input {
+        overflow: hidden;
+        width: 0;
+    }
+    .selected-file {
+        border-radius: 8px;
+        padding: 12px 20px;
+        font-weight: 500;
+        font-size: 14px;
+        color: #999999;
+    }
+}
+
+.tip {
+    font-weight: 400;
+    font-size: 14px;
+    color: #999999;
+}

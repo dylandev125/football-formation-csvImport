@@ -1,0 +1,37 @@
+.sidebar {
+    width: 60px;
+    height: 100%;
+    position: fixed;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    padding: 18px 0px;
+    .dot1 {
+        position: absolute;
+        left: 10px;
+        top: 100px;
+    }
+    .dot2 {
+        position: absolute;
+        left: 10px;
+        top: 160px;
+    }
+    .bar {
+        opacity: 0.5;
+    }
+
+    .bar:hover {
+        opacity: 1;
+    }
+    .bar-selected {
+        opacity: 1;
+    }
+}
+
+.container {
+    height: calc(100vh - 80px);
+    background-color: #222222;
+    padding: 40px 40px 40px 100px;
+}
