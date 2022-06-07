@@ -18,6 +18,12 @@
             font-size: 18px;
             line-height: 24px;
         }
+        .sub-title:hover .hidden-icon {
+            display: inline;
+        }
+        .hidden-icon {
+            display: none;
+        }
     }
     .action-header {
         display: flex;
@@ -43,7 +49,7 @@
                 line-height: 21px;
                 ::placeholder{
                     color: #999999;
-            }
+                }
             }
         }
         .btn-import {

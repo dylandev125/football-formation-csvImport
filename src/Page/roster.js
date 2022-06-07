@@ -1,16 +1,19 @@
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import Layout from '../Layout';
 import ImportDialog from '../Dialog/import';
+import ChangeNameDialog from '../Dialog/changename';
 import { ReactComponent as Pen } from '../assets/pen.svg';
 import Search from '../assets/search.svg';
 import './style.scss';
 
 const Roster = () => {
     const [isModal, setModal] = useState(false);
-    const [boardTitle, setBoardTitle] = useState("My Team");
+    const [isNameModal, setNameModal] = useState(false);
+    const rosterName = useSelector((state) => state.roster.rostername);
 
     const changeTitle = () => {
-        setBoardTitle()
+        setNameModal(true);
     }
 
     const onImport = () => {
@@ -18,6 +21,7 @@ const Roster = () => {
     }
     const onCloseModal = () => {
         setModal(false);
+        setNameModal(false);
     }
 
     const customStyles = {
@@ -37,11 +41,21 @@ const Roster = () => {
                 onCloseModal={onCloseModal}
                 customStyles={customStyles}
             />
+            <ChangeNameDialog
+                isModal={isNameModal}
+                onCloseModal={onCloseModal}
+                customStyles={customStyles}
+            />
 
             <div className="header">
                 <div className="title-header">
                     <span className="title">Roster Details</span>
-                    <span className="sub-title">{boardTitle}</span> <a href='#' onClick={changeTitle}><Pen /></a>
+                    <span className="sub-title">{rosterName}
+                    {rosterName === 'My Team' ?
+                        <a href='#' onClick={changeTitle}> <Pen /></a> :
+                        <a href='#' className='hidden-icon' onClick={changeTitle}> <Pen /></a>
+                    }</span>
+
                 </div>
                 <div className="action-header">
                     <div className="input-wrapper">
