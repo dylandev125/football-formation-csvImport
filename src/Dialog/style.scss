@@ -7,11 +7,17 @@
     background-color: #FEA013;
     border: none;
     outline: none;
-    padding: 12px 20px;
+    padding: 12px 0px;
     border-radius: 8px;
     color: white;
     cursor: pointer;
     font-size: 14px;
+}
+.btn-save:hover {
+    background-color: #BA4A0C;
+}
+.btn-save:active {
+    background-color: #2D2D2D;
 }
 
 .mark {
@@ -25,6 +31,58 @@
 
 .modal-body {
     position: relative;
+    .button-wrapper {
+        margin-top: 20px;
+        display: flex;
+        justify-content: flex-end;
+        gap: 8px;
+        .btn-cancel {
+            cursor: pointer;
+            border: 1px solid #494949;
+            border-radius: 8px;
+            background-color: rgba(0,0,0,0);
+            width: 90px;
+            height: 44px;
+            color: #CBCBCB;
+            font-weight: 500;
+            font-size: 14px;
+        }
+        .btn-delete {
+            cursor: pointer;
+            border: 1px solid #D23131;
+            border-radius: 8px;
+            background-color: #D23131;
+            width: 90px;
+            height: 44px;
+            color: #CBCBCB;
+            font-weight: 500;
+            font-size: 14px;
+        }
+    }
+    .action-btn {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border: 1px solid #2D2D2D;
+        padding: 10px 0px;
+        cursor: pointer;
+        .text-btn {
+            font-weight: 500;
+            font-size: 14px;
+            color: #CBCBCB;
+        }
+    }
+    .action-btn:hover {
+        border: 1px solid #CBCBCB;
+    }
+    .alert-wrapper {
+        padding: 10px 0px;
+        .text-btn {
+            font-weight: 400;
+            font-size: 14px;
+            color: #CBCBCB;
+        }
+    }
     .change-container {
         display: flex;
         gap: 10px;
@@ -36,6 +94,12 @@
             border-radius: 8px;
             color: white;
             cursor: pointer;
+        }
+        .btn-save:hover {
+            background-color: #BA4A0C;
+        }
+        .btn-save:active {
+            background-color: #2D2D2D;
         }
         input {
             height: 40px;
@@ -58,6 +122,9 @@
     .error-wrapper-select {
         border-left: 1px solid #D23131!important;
     }
+    .selected-wrapper {
+        background-color: #333333;
+    }
     .browse-wrapper {
         margin: 16px 0px;
         border: 1px solid #494949;
@@ -76,6 +143,10 @@
             font-weight: 500;
             font-size: 14px;
         }
+        .file-upload:hover .selected-file {
+            color: #CBCBCB;
+        }
+
 
         .file-upload input {
             overflow: hidden;
@@ -110,24 +181,34 @@
 }
 
 table {
-    margin-top: 24px;
     width: 100%;
     thead {
         th {
-            color: #CBCBCB;
-            font-weight: 400;
-            font-size: 14px;
+            padding-bottom: 15px;
             text-align: left;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+            color: #CBCBCB;
         }
     }
     tbody {
         color: #CBCBCB;
         font-weight: 600;
         font-size: 16px;
+        td {
+            align-items: center;
+            height: 35px;
+        }
+        td:first-child {
+            display: flex;
+            gap: 5px;
+        }
     }
 }
 
-.subtitle {
+.subtitle-2 {
+    margin-bottom: 24px;
     font-weight: 500;
     font-size: 14px;
     color: #F8F8F8;
