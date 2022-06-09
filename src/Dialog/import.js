@@ -61,6 +61,7 @@ const ImportDialog = (props) => {
 
     const onImport = () => {
         dispatch(setPlayerData({ data: csvData }))
+        console.log(csvData);
         props.onCloseModal();
     }
 

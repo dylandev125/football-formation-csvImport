@@ -13,7 +13,7 @@ const Roster = () => {
     const [isModal, setModal] = useState(false);
     const [isNameModal, setNameModal] = useState(false);
     const [isActionModal, setActionModal] = useState(false);
-    const [itemIndex, setItemIndex] = useState();
+    const [itemIndex, setItemIndex] = useState(0);
     const rosterValue = useSelector((state) => state.roster);
     const rosterName = rosterValue.rostername;
     const playerData = rosterValue.data;
@@ -120,7 +120,7 @@ const Roster = () => {
                         playerData.map((item, index) => (
                             <tr key={index}>
                                 <td>
-                                    <img width={24} height={24} src={item[7]}/> {item[0]}
+                                    <img width={24} height={24} src={item[7]} alt=''/> {item[0]}
                                 </td>
                                 <td>{item[2]}</td>
                                 <td>{item[8]}</td>
@@ -131,7 +131,7 @@ const Roster = () => {
                                 <td>{item[9]}</td>
                                 <td>{item[10]}</td>
                                 <td>
-                                    <div className='edit-player' onClick={() => onEdit(index)}><img src={Edit}/></div>
+                                    <div className='edit-player' onClick={() => onEdit(index)}><img src={Edit} alt=''/></div>
                                 </td>
                             </tr>
                         )) :
