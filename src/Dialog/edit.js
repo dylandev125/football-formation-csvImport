@@ -125,7 +125,7 @@ var country_list = [  'Afghan',
 'Moldovan',
 'Monacan',
 'Mongolian',
-'Moroccan',
+'Morocco',
 'Mosotho',
 'Motswana',
 'Mozambican',
@@ -206,7 +206,7 @@ const EditDialog = (props) => {
     const [dataState, setDataState] = useState(false);
     const [tempArr, setTempArr] = useState(Array(15).fill(''));
     const ind = props.index;
-    const [starterCheck, setStarterCheck] = useState(Array(15).fill(''));
+    const [starterCheck, setStarterCheck] = useState(Array(100).fill(''));
 
     const onChangeHandler = (e, arr_ind) => {
         setDataState(true);
@@ -224,9 +224,13 @@ const EditDialog = (props) => {
 
         let editedPlayer = tempData[ind];
         for (let i = 0 ; i < editedPlayer.length ; i ++) {
-            if(tempArr[i] !== '') editedPlayer[i] = tempArr[i];
+            console.log(tempArr[i])
+            if(tempArr[i] !== '') {
+                editedPlayer[i] = tempArr[i];
+            }
         }
         tempData[ind] = editedPlayer;
+        console.log(tempData);
         dispatch(setPlayerData({data : tempData}));
         props.onCloseModal();
         setDataState(false);
@@ -259,7 +263,7 @@ const EditDialog = (props) => {
         tempArr.map((item) => {
             t_arr.push(item);
         })
-        t_arr[8] = 'No';
+        t_arr[8] = 'Yes';
         setDataState(true);
         setTempArr(t_arr);
         setStarterCheck(temp);

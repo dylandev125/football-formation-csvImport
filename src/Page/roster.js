@@ -15,6 +15,7 @@ const Roster = () => {
     const [isActionModal, setActionModal] = useState(false);
     const [itemIndex, setItemIndex] = useState(0);
     const rosterValue = useSelector((state) => state.roster);
+    const [searchValue, setSearchValue] = useState('');
     const rosterName = rosterValue.rostername;
     const playerData = rosterValue.data;
 
@@ -34,6 +35,15 @@ const Roster = () => {
     const onEdit = (ind) => {
         setActionModal(true);
         setItemIndex(ind);
+    }
+
+    const onSearch = (e) => {
+        console.log(e.target.value)
+        setSearchValue(e.target.value);
+        console.log(e.target.value);
+        if(e.key === 'Escape') {
+            setSearchValue('');
+        }
     }
 
     const customStyles = {
@@ -79,7 +89,7 @@ const Roster = () => {
                 <div className="action-header">
                     <div className="input-wrapper">
                         <img alt='' src={Search} />
-                        <input placeholder='Find Player' />
+                        <input onKeyDown={(e) => onSearch(e)} placeholder='Find Player' />
                     </div>
 
                     <button className='btn-import' onClick={onImport}> Import Team</button>
