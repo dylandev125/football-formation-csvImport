@@ -177,15 +177,25 @@ const Formation = () => {
                     <div className='personal-info'>
                         <div className='overlay'></div>
                         {playerDetail.length === 11 && posNum === '' && posField === '' &&
-                            <img src={playerDetail.length > 0 ? fieldList[0][0][1] : ''} alt=''/>
+                            <>
+                                <img src={playerDetail.length > 0 ? fieldList[0][0][1] : ''} alt=''/>
+                                <div className='big-num'>{fieldList[0][0][2]}</div>
+                                <div className='small-num'>{fieldList[0][0][2]}</div>
+                                <div className='name'>{fieldList[0][0][0]}</div>
+                                <div className='position'>{fieldList[0][0][3]}</div>
+                            </>
                         }
                         {playerDetail.length === 11 && posNum !== '' && posField !== '' &&
-                            <img src={playerDetail.length > 0 ? fieldList[posField][posNum][1] : ''} alt=''/>
+                            <>
+                                <img src={playerDetail.length > 0 ? fieldList[posField][posNum][1] : ''} alt=''/>
+                                <div className='big-num'>{posNum!== '' ? fieldList[posField][posNum][2] : ''}</div>
+                                <div className='small-num'>{posNum!== '' ? fieldList[posField][posNum][2] : ''}</div>
+                                <div className='name'>{posNum!== '' ? fieldList[posField][posNum][0] : ''}</div>
+                                <div className='position'>{posNum!== '' ? fieldList[posField][posNum][3] : ''}</div>
+                            </>
                         }
-                        <div className='big-num'>{posNum!== '' ? fieldList[posField][posNum][2] : ''}</div>
-                        <div className='small-num'>{posNum!== '' ? fieldList[posField][posNum][2] : ''}</div>
-                        <div className='name'>{posNum!== '' ? fieldList[posField][posNum][0] : ''}</div>
-                        <div className='position'>{posNum!== '' ? fieldList[posField][posNum][3] : ''}</div>
+
+
                         <div className='property-info'>
                             {playerDetail.length === 11 && posNum ==='' && posField === '' &&
                                 <>
