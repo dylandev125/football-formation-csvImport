@@ -210,7 +210,7 @@ const Formation = () => {
                                 <>
                                     <div className='info-field'>
                                         <span className='title'>Height</span>
-                                        <span className='info'>{posNum!== '' ? fieldList[posField][posNum] / 100 + ' m' : ''}</span>
+                                        <span className='info'>{posNum!== '' ? fieldList[posField][posNum][5] / 100 + ' m' : ''}</span>
                                     </div>
                                     <div className='info-field'>
                                         <span className='title'>Weight</span>
