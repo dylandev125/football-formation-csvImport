@@ -24,6 +24,7 @@ const ChangeNameDialog = (props) => {
             style={props.customStyles}
             className="Modal Modal-sm"
             contentLabel="Example Modal"
+            ariaHideApp={false}
         >
             <div>
                 <button className='btn-close' onClick={props.onCloseModal}><img src={Close} alt='' /></button>

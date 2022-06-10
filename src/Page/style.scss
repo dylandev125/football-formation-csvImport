@@ -35,15 +35,17 @@
         gap: 8px;
         .input-wrapper {
             height: 42px;
-            width: 218px;
+            width: 168px;
             border-radius: 8px;
             border: 1px solid #494949;
-            padding: 0px 15px;
+            padding: 0px 65px 0px 15px;
             display: flex;
             gap: 10px;
             align-items: center;
+            position: relative;
 
             input {
+                width: 100%;
                 background-color: #222222;
                 border: none;
                 outline: none;
@@ -56,22 +58,52 @@
                     color: #999999;
                 }
             }
+            .btn-search {
+                cursor: pointer;
+                background-color: #222222;
+                border: none;
+                outline: none;
+                font-weight: 500;
+                font-size: 14px;
+                color: #FEA013;
+                right: 10px;
+                position: absolute;
+
+            }
+            .btn-close {
+                cursor: pointer;
+                position: absolute;
+                right: 10px;
+                background-color: #222222;
+                border: none;
+            }
         }
+
         .btn-import {
             width: 132px;
             height: 44px;
             background-color: #FEA013;
             border: none;
             outline: none;
-            padding: 12px 20px;
             border-radius: 8px;
             color: white;
+            cursor: pointer;
         }
         .btn-import:hover {
             background-color: #BA4A0C;
-            cursor: pointer;
         }
         .btn-import:active {
+            background-color: #2D2D2D;
+        }
+
+        .reimport {
+            background-color: #222222;
+            border: 1px solid #494949;
+        }
+        .reimport:hover {
+            background-color: #2D2D2D;
+        }
+        .reimport:active {
             background-color: #2D2D2D;
         }
     }

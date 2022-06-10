@@ -220,17 +220,14 @@ const EditDialog = (props) => {
 
     const onEdit = () => {
         let tempData = playerData.map((item) => item.map(prev => prev))
-        console.log(tempData);
 
         let editedPlayer = tempData[ind];
         for (let i = 0 ; i < editedPlayer.length ; i ++) {
-            console.log(tempArr[i])
             if(tempArr[i] !== '') {
                 editedPlayer[i] = tempArr[i];
             }
         }
         tempData[ind] = editedPlayer;
-        console.log(tempData);
         dispatch(setPlayerData({data : tempData}));
         props.onCloseModal();
         setDataState(false);
@@ -278,6 +275,7 @@ const EditDialog = (props) => {
             style={props.customStyles}
             className="Modal Modal-edit"
             contentLabel="Example Modal"
+            ariaHideApp={false}
         >
             <div>
                 <button className='btn-close' onClick={props.onCloseModal}><img src={Close} alt='' /></button>
@@ -312,8 +310,8 @@ const EditDialog = (props) => {
                             <span className='title-info'>Nationality</span>
                             <select defaultValue={playerData.length > 0 ? playerData[ind][6] : ''} onChange={(e) => onChangeHandler(e, 6)}>
                                 {
-                                    country_list.map((item) => (
-                                        <option>{item}</option>
+                                    country_list.map((item, index) => (
+                                        <option key={index}>{item}</option>
                                     ))
                                 }
                             </select>
@@ -325,8 +323,8 @@ const EditDialog = (props) => {
                             <span className='title-info'>Position</span>
                             <select defaultValue={playerData.length > 0 ? playerData[ind][3] : ''} onChange={(e) => onChangeHandler(e, 3)}>
                                 {
-                                    position_list.map((item) => (
-                                        <option>{item}</option>
+                                    position_list.map((item, index) => (
+                                        <option key={index}>{item}</option>
                                     ))
                                 }
                             </select>
@@ -342,6 +340,7 @@ const EditDialog = (props) => {
                                 id='radioNo'
                                 checked={starterCheck[ind]!=='' ? !starterCheck[ind] : playerData.length > 0 ? playerData[ind][8] === 'No' : ""}
                                 onClick={onStarterNo}
+                                readOnly
                                 />
 
                                 <label for='radioNo'></label><span className='starter-text'>No</span>
@@ -351,6 +350,7 @@ const EditDialog = (props) => {
                                 id='radioYes'
                                 checked={starterCheck[ind]!=='' ? starterCheck[ind] : playerData.length > 0 ? playerData[ind][8] === 'Yes' : ""}
                                 onClick={onStarterYes}
+                                readOnly
                                 />
                                 <label for='radioYes'></label><span className='starter-text'>Yes</span>
                             </div>

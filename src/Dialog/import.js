@@ -21,7 +21,6 @@ const ImportDialog = (props) => {
         setFileName(file.name);
         Papa.parse(file, {
             complete: function (results) {
-                console.log("Finished:", results.data);
                 csvToJson = results.data;
                 csvToJson.splice(0, 1);
 
@@ -61,7 +60,6 @@ const ImportDialog = (props) => {
 
     const onImport = () => {
         dispatch(setPlayerData({ data: csvData }))
-        console.log(csvData);
         props.onCloseModal();
     }
 
@@ -72,6 +70,8 @@ const ImportDialog = (props) => {
             style={props.customStyles}
             className="Modal"
             contentLabel="Example Modal"
+            ariaHideApp={false}
+
         >
             <div>
                 <button className='btn-close' onClick={props.onCloseModal}><img src={Close} alt='' /></button>
@@ -106,18 +106,22 @@ const ImportDialog = (props) => {
 
                                 <table>
                                     <thead>
-                                        <th>Total Players</th>
-                                        <th>GoalKeepers</th>
-                                        <th>Defenders</th>
-                                        <th>Midfielders</th>
-                                        <th>Forwards</th>
+                                        <tr>
+                                            <th>Total Players</th>
+                                            <th>GoalKeepers</th>
+                                            <th>Defenders</th>
+                                            <th>Midfielders</th>
+                                            <th>Forwards</th>
+                                        </tr>
                                     </thead>
                                     <tbody>
-                                        <td>{data.totalPlayer}</td>
-                                        <td>{data.goalkeeper}</td>
-                                        <td>{data.defender}</td>
-                                        <td>{data.midfielder}</td>
-                                        <td>{data.forward}</td>
+                                        <tr>
+                                            <td>{data.totalPlayer}</td>
+                                            <td>{data.goalkeeper}</td>
+                                            <td>{data.defender}</td>
+                                            <td>{data.midfielder}</td>
+                                            <td>{data.forward}</td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </>
