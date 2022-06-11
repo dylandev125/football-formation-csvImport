@@ -13,8 +13,8 @@ const Formation = () => {
     const [isNameModal, setNameModal] = useState(false);
     const [playerCount, setPlayerCount] = useState(0);
     const [playerDetail, setPlayerDetail] = useState([]);
-    const [posNum, setPosNum] = useState('');
-    const [posField, setPosField] = useState('');
+    const [posNum, setPosNum] = useState(0);
+    const [posField, setPosField] = useState(0);
     const [isRoster, setRoster] = useState(false);
     const [goalkeeper, setGoalkeeper] = useState([]);
     const [defender, setDefender] = useState([]);
@@ -135,39 +135,39 @@ const Formation = () => {
                     <img src={Playground} alt=''/>
                     {playerData.length > 0 && playerCount === 11 && isRoster &&
                         <>
-                            <div className='formation-pos' onClick={() => onPos(0, 0)} style={{left:'7%', top:('calc(50% - 16px)')}}>{goalkeeper[0][2]}
+                            <div className={posNum === 0 && posField ==0 ? 'formation-pos pos-selected' : 'formation-pos'} onClick={() => onPos(0, 0)} style={{left:'7%', top:('calc(50% - 16px)')}}>{goalkeeper[0][2]}
                                 <span className='player-name'>{goalkeeper[0][0]}</span>
                             </div>
-                            <div className='formation-pos' onClick={() => onPos(0, 1)} style={{left:'25%', top:'10%'}}>{defender[0][2]}
+                            <div className={posNum === 0 && posField == 1 ? 'formation-pos pos-selected' : 'formation-pos'} onClick={() => onPos(0, 1)} style={{left:'25%', top:'10%'}}>{defender[0][2]}
                                 <span className='player-name'>{defender[0][0]}</span>
                             </div>
-                            <div className='formation-pos' onClick={() => onPos(1, 1)} style={{left:'24%', top:'35%'}}>{defender[1][2]}
+                            <div className={posNum === 1 && posField == 1 ? 'formation-pos pos-selected' : 'formation-pos'} onClick={() => onPos(1, 1)} style={{left:'24%', top:'35%'}}>{defender[1][2]}
                                 <span className='player-name'>{defender[1][0]}</span>
                             </div>
-                            <div className='formation-pos' onClick={() => onPos(2, 1)} style={{left:'24%', top:'60%'}}>{defender[2][2]}
+                            <div className={posNum === 2 && posField == 1 ? 'formation-pos pos-selected' : 'formation-pos'} onClick={() => onPos(2, 1)} style={{left:'24%', top:'60%'}}>{defender[2][2]}
                                 <span className='player-name'>{defender[2][0]}</span>
                             </div>
-                            <div className='formation-pos' onClick={() => onPos(3, 1)} style={{left:'25%', top:'83%'}}>{defender[3][2]}
+                            <div className={posNum === 3 && posField == 1 ? 'formation-pos pos-selected' : 'formation-pos'} onClick={() => onPos(3, 1)} style={{left:'25%', top:'83%'}}>{defender[3][2]}
                                 <span className='player-name'>{defender[3][0]}</span>
                             </div>
 
-                            <div className='formation-pos' onClick={() => onPos(0, 2)} style={{left:'calc(50% - 16px)', top:'calc(25% - 40px)'}}>{midfielder[0][2]}
+                            <div className={posNum === 0 && posField == 2 ? 'formation-pos pos-selected' : 'formation-pos'} onClick={() => onPos(0, 2)} style={{left:'calc(50% - 16px)', top:'calc(25% - 40px)'}}>{midfielder[0][2]}
                                 <span className='player-name'>{midfielder[0][0]}</span>
                             </div>
-                            <div className='formation-pos' onClick={() => onPos(1, 2)} style={{left:'calc(50% - 16px)', top:'calc(50% - 16px)'}}>{midfielder[1][2]}
+                            <div className={posNum === 1 && posField == 2 ? 'formation-pos pos-selected' : 'formation-pos'} onClick={() => onPos(1, 2)} style={{left:'calc(50% - 16px)', top:'calc(50% - 16px)'}}>{midfielder[1][2]}
                                 <span className='player-name'>{midfielder[1][0]}</span>
                             </div>
-                            <div className='formation-pos' onClick={() => onPos(2, 2)} style={{left:'calc(50% - 16px)', top:'calc(75% + 10px)'}}>{midfielder[2][2]}
+                            <div className={posNum === 2 && posField == 2 ? 'formation-pos pos-selected' : 'formation-pos'} onClick={() => onPos(2, 2)} style={{left:'calc(50% - 16px)', top:'calc(75% + 10px)'}}>{midfielder[2][2]}
                                 <span className='player-name'>{midfielder[2][0]}</span>
                             </div>
 
-                            <div className='formation-pos' onClick={() => onPos(0, 3)} style={{left:'calc(75% - 40px)', top:'calc(25% - 15px)'}}>{forward[0][2]}
+                            <div className={posNum === 0 && posField == 3 ? 'formation-pos pos-selected' : 'formation-pos'} onClick={() => onPos(0, 3)} style={{left:'calc(75% - 40px)', top:'calc(25% - 15px)'}}>{forward[0][2]}
                                 <span className='player-name'>{forward[0][0]}</span>
                             </div>
-                            <div className='formation-pos' onClick={() => onPos(1, 3)} style={{left:'calc(75% - 16px)', top:'calc(50% - 16px)'}}>{forward[1][2]}
+                            <div className={posNum === 1 && posField == 3 ? 'formation-pos pos-selected' : 'formation-pos'} onClick={() => onPos(1, 3)} style={{left:'calc(75% - 16px)', top:'calc(50% - 16px)'}}>{forward[1][2]}
                                 <span className='player-name'>{forward[1][0]}</span>
                             </div>
-                            <div className='formation-pos' onClick={() => onPos(2, 3)} style={{left:'calc(75% - 40px)', top:'calc(75% - 15px)'}}>{forward[2][2]}
+                            <div className={posNum === 2 && posField == 3 ? 'formation-pos pos-selected' : 'formation-pos'} onClick={() => onPos(2, 3)} style={{left:'calc(75% - 40px)', top:'calc(75% - 15px)'}}>{forward[2][2]}
                                 <span className='player-name'>{forward[2][0]}</span>
                             </div>
                         </>
@@ -176,16 +176,8 @@ const Formation = () => {
                 <div className='player-detail'>
                     <div className='personal-info'>
                         <div className='overlay'></div>
-                        {playerDetail.length === 11 && posNum === '' && posField === '' &&
-                            <>
-                                <img src={playerDetail.length > 0 ? fieldList[0][0][1] : ''} alt=''/>
-                                <div className='big-num'>{fieldList[0][0][2]}</div>
-                                <div className='small-num'>{fieldList[0][0][2]}</div>
-                                <div className='name'>{fieldList[0][0][0]}</div>
-                                <div className='position'>{fieldList[0][0][3]}</div>
-                            </>
-                        }
-                        {playerDetail.length === 11 && posNum !== '' && posField !== '' &&
+
+                        {playerDetail.length === 11 &&
                             <>
                                 <img src={playerDetail.length > 0 ? fieldList[posField][posNum][1] : ''} alt=''/>
                                 <div className='big-num'>{posNum!== '' ? fieldList[posField][posNum][2] : ''}</div>
@@ -197,26 +189,8 @@ const Formation = () => {
 
 
                         <div className='property-info'>
-                            {playerDetail.length === 11 && posNum ==='' && posField === '' &&
-                                <>
-                                    <div className='info-field'>
-                                        <span className='title'>Height</span>
-                                        <span className='info'>{fieldList[0][0][4] / 100 + ' m' }</span>
-                                    </div>
-                                    <div className='info-field'>
-                                        <span className='title'>Weight</span>
-                                        <span className='info'>{fieldList[0][0][5]+ 'kg'}</span>
-                                    </div>
-                                    <div className='info-field'>
-                                        <span className='title'>Nationality</span>
-                                        <span className='info'>
-                                            <img src={fieldList[0][0][7]} alt=''/>
-                                            {fieldList[0][0][6]}
-                                        </span>
-                                    </div>
-                                </>
-                            }
-                            {playerDetail.length === 11 && posNum !=='' && posField !== '' &&
+
+                            {playerDetail.length === 11 &&
                                 <>
                                     <div className='info-field'>
                                         <span className='title'>Height</span>
@@ -238,31 +212,8 @@ const Formation = () => {
                         </div>
                     </div>
                     <div className='record-info'>
-                        {playerDetail.length === 11 && posNum==='' && posField === '' &&
-                        <>
-                        <div className='detail-row'>
-                            <div className='detail-field'>
-                                <span className='field-value'>{fieldList[0][0][9]}</span>
-                                <span className='field-title'>Appearences</span>
-                            </div>
-                            <div className='detail-field'>
-                                <span className='field-value'>{fieldList[0][0][10]}</span>
-                                <span className='field-title'>Minutes Played</span>
-                            </div>
-                        </div>
-                        <div className='detail-row'>
-                            <div className='detail-field'>
-                                <span className='field-value'>{fieldList[0][0][3]==='Goalkeeper' ? fieldList[0][0][13] : fieldList[0][0][11]}</span>
-                                <span className='field-title'>{fieldList[0][0][3]==='Goalkeeper' ?  "Clean Sheets" : "Goals"}</span>
-                            </div>
-                            <div className='detail-field'>
-                                <span className='field-value'>{fieldList[0][0][3]==='Goalkeeper' ? fieldList[0][0][14] : fieldList[0][0][12] }</span>
-                                <span className='field-title'>{fieldList[0][0][3]==='Goalkeeper' ?  "Saves" : "Assists"}</span>
-                            </div>
-                        </div>
-                    </>
-                        }
-                        {playerDetail.length === 11 && posNum!=='' && posField !== '' &&
+
+                        {playerDetail.length === 11 &&
                         <>
                             <div className='detail-row'>
                                 <div className='detail-field'>
