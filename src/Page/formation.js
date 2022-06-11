@@ -177,7 +177,7 @@ const Formation = () => {
                     <div className='personal-info'>
                         <div className='overlay'></div>
 
-                        {playerDetail.length === 11 &&
+                        {playerDetail.length === 11 && isRoster &&
                             <>
                                 <img src={playerDetail.length > 0 ? fieldList[posField][posNum][1] : ''} alt=''/>
                                 <div className='big-num'>{posNum!== '' ? fieldList[posField][posNum][2] : ''}</div>
@@ -190,7 +190,7 @@ const Formation = () => {
 
                         <div className='property-info'>
 
-                            {playerDetail.length === 11 &&
+                            {playerDetail.length === 11 && isRoster &&
                                 <>
                                     <div className='info-field'>
                                         <span className='title'>Height</span>
@@ -213,7 +213,7 @@ const Formation = () => {
                     </div>
                     <div className='record-info'>
 
-                        {playerDetail.length === 11 &&
+                        {playerDetail.length === 11 && isRoster &&
                         <>
                             <div className='detail-row'>
                                 <div className='detail-field'>
