@@ -135,39 +135,39 @@ const Formation = () => {
                     <img src={Playground} alt=''/>
                     {playerData.length > 0 && playerCount === 11 && isRoster &&
                         <>
-                            <div className={posNum === 0 && posField ==0 ? 'formation-pos pos-selected' : 'formation-pos'} onClick={() => onPos(0, 0)} style={{left:'7%', top:('calc(50% - 16px)')}}>{goalkeeper[0][2]}
+                            <div className={posNum === 0 && posField === 0 ? 'formation-pos pos-selected' : 'formation-pos'} onClick={() => onPos(0, 0)} style={{left:'7%', top:('calc(50% - 16px)')}}>{goalkeeper[0][2]}
                                 <span className='player-name'>{goalkeeper[0][0]}</span>
                             </div>
-                            <div className={posNum === 0 && posField == 1 ? 'formation-pos pos-selected' : 'formation-pos'} onClick={() => onPos(0, 1)} style={{left:'25%', top:'10%'}}>{defender[0][2]}
+                            <div className={posNum === 0 && posField === 1 ? 'formation-pos pos-selected' : 'formation-pos'} onClick={() => onPos(0, 1)} style={{left:'25%', top:'10%'}}>{defender[0][2]}
                                 <span className='player-name'>{defender[0][0]}</span>
                             </div>
-                            <div className={posNum === 1 && posField == 1 ? 'formation-pos pos-selected' : 'formation-pos'} onClick={() => onPos(1, 1)} style={{left:'24%', top:'35%'}}>{defender[1][2]}
+                            <div className={posNum === 1 && posField === 1 ? 'formation-pos pos-selected' : 'formation-pos'} onClick={() => onPos(1, 1)} style={{left:'24%', top:'35%'}}>{defender[1][2]}
                                 <span className='player-name'>{defender[1][0]}</span>
                             </div>
-                            <div className={posNum === 2 && posField == 1 ? 'formation-pos pos-selected' : 'formation-pos'} onClick={() => onPos(2, 1)} style={{left:'24%', top:'60%'}}>{defender[2][2]}
+                            <div className={posNum === 2 && posField === 1 ? 'formation-pos pos-selected' : 'formation-pos'} onClick={() => onPos(2, 1)} style={{left:'24%', top:'60%'}}>{defender[2][2]}
                                 <span className='player-name'>{defender[2][0]}</span>
                             </div>
-                            <div className={posNum === 3 && posField == 1 ? 'formation-pos pos-selected' : 'formation-pos'} onClick={() => onPos(3, 1)} style={{left:'25%', top:'83%'}}>{defender[3][2]}
+                            <div className={posNum === 3 && posField === 1 ? 'formation-pos pos-selected' : 'formation-pos'} onClick={() => onPos(3, 1)} style={{left:'25%', top:'83%'}}>{defender[3][2]}
                                 <span className='player-name'>{defender[3][0]}</span>
                             </div>
 
-                            <div className={posNum === 0 && posField == 2 ? 'formation-pos pos-selected' : 'formation-pos'} onClick={() => onPos(0, 2)} style={{left:'calc(50% - 16px)', top:'calc(25% - 40px)'}}>{midfielder[0][2]}
+                            <div className={posNum === 0 && posField === 2 ? 'formation-pos pos-selected' : 'formation-pos'} onClick={() => onPos(0, 2)} style={{left:'calc(50% - 16px)', top:'calc(25% - 40px)'}}>{midfielder[0][2]}
                                 <span className='player-name'>{midfielder[0][0]}</span>
                             </div>
-                            <div className={posNum === 1 && posField == 2 ? 'formation-pos pos-selected' : 'formation-pos'} onClick={() => onPos(1, 2)} style={{left:'calc(50% - 16px)', top:'calc(50% - 16px)'}}>{midfielder[1][2]}
+                            <div className={posNum === 1 && posField === 2 ? 'formation-pos pos-selected' : 'formation-pos'} onClick={() => onPos(1, 2)} style={{left:'calc(50% - 16px)', top:'calc(50% - 16px)'}}>{midfielder[1][2]}
                                 <span className='player-name'>{midfielder[1][0]}</span>
                             </div>
-                            <div className={posNum === 2 && posField == 2 ? 'formation-pos pos-selected' : 'formation-pos'} onClick={() => onPos(2, 2)} style={{left:'calc(50% - 16px)', top:'calc(75% + 10px)'}}>{midfielder[2][2]}
+                            <div className={posNum === 2 && posField === 2 ? 'formation-pos pos-selected' : 'formation-pos'} onClick={() => onPos(2, 2)} style={{left:'calc(50% - 16px)', top:'calc(75% + 10px)'}}>{midfielder[2][2]}
                                 <span className='player-name'>{midfielder[2][0]}</span>
                             </div>
 
-                            <div className={posNum === 0 && posField == 3 ? 'formation-pos pos-selected' : 'formation-pos'} onClick={() => onPos(0, 3)} style={{left:'calc(75% - 40px)', top:'calc(25% - 15px)'}}>{forward[0][2]}
+                            <div className={posNum === 0 && posField === 3 ? 'formation-pos pos-selected' : 'formation-pos'} onClick={() => onPos(0, 3)} style={{left:'calc(75% - 40px)', top:'calc(25% - 15px)'}}>{forward[0][2]}
                                 <span className='player-name'>{forward[0][0]}</span>
                             </div>
-                            <div className={posNum === 1 && posField == 3 ? 'formation-pos pos-selected' : 'formation-pos'} onClick={() => onPos(1, 3)} style={{left:'calc(75% - 16px)', top:'calc(50% - 16px)'}}>{forward[1][2]}
+                            <div className={posNum === 1 && posField === 3 ? 'formation-pos pos-selected' : 'formation-pos'} onClick={() => onPos(1, 3)} style={{left:'calc(75% - 16px)', top:'calc(50% - 16px)'}}>{forward[1][2]}
                                 <span className='player-name'>{forward[1][0]}</span>
                             </div>
-                            <div className={posNum === 2 && posField == 3 ? 'formation-pos pos-selected' : 'formation-pos'} onClick={() => onPos(2, 3)} style={{left:'calc(75% - 40px)', top:'calc(75% - 15px)'}}>{forward[2][2]}
+                            <div className={posNum === 2 && posField === 3 ? 'formation-pos pos-selected' : 'formation-pos'} onClick={() => onPos(2, 3)} style={{left:'calc(75% - 40px)', top:'calc(75% - 15px)'}}>{forward[2][2]}
                                 <span className='player-name'>{forward[2][0]}</span>
                             </div>
                         </>
