@@ -10,10 +10,6 @@ import Edit from '../assets/edit.svg';
 import Close from '../assets/close.svg';
 import './style.scss';
 
-const compareString = (str1, str2) => {
-    return str1.toLowerCase().includes(str2.toLowerCase())
-}
-
 const Roster = () => {
     const [isModal, setModal] = useState(false);
     const [isNameModal, setNameModal] = useState(false);
@@ -60,9 +56,6 @@ const Roster = () => {
     const onSearchClick = () => {
         setSearch(true);
         document.getElementById('search').setAttribute('disabled', true);
-        const tempResult = playerData.filter((item) => {
-            return item[0].toLowerCase().includes(searchValue.toLowerCase()) || item[3].toLowerCase().includes(searchValue.toLowerCase())
-        });
 
         let temp = searchResult.map((item) => item.map(i => i))
 
