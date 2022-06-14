@@ -120,7 +120,7 @@ const Formation = () => {
 
             <div className="header">
                 <div className="title-header">
-                    <span className="title">Roster Details</span>
+                    <span className="title">Formation Overview</span>
                     <span className="sub-title">{rosterName}
                     {rosterName === 'My Team' ?
                         <span className='visible-icon' onClick={changeTitle}> <Pen /></span> :
